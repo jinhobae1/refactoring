@@ -8,10 +8,12 @@ import java.util.Random;
 import SortSample.SortSample;
 import refactoring.chap02.FindInt;
 import refactoring.chap02.simpleDatabase.SimpleDatabase;
+import refactoring.chap04.Label;
+import refactoring.chap04.Person;
 
 public class Main {
 	public static void main(String[] args) {
-		FindInt();
+	/*	FindInt();
 		SimpleDatabase();
 
 		execute(10);
@@ -19,7 +21,21 @@ public class Main {
 		execute(10);
 		execute(10);
 		execute(10);
+*/
+		PersonLabel();
+	}
 
+	private static void PersonLabel() {
+		Person[]people = {
+				new Person(new Label("Alice"),new Label("alice@example.com")),
+				new Person(new Label("Bobby"),new Label("Bobby@example.com")),
+				new Person(new Label("Chris")),
+		};
+		for(Person p :people) {
+			System.out.println(p.toString());
+			p.display();
+			System.out.println("");
+		}
 	}
 
 	private static final Random random = new Random(1234);
