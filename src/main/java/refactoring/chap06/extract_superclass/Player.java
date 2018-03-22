@@ -2,8 +2,8 @@ package refactoring.chap06.extract_superclass;
 
 public class Player {
 	private boolean isMusic;
-	private String musicDate = "±Â";
-	private String videoDate = "»Õ";
+	private Music music = new Music("±Â");
+	private Video video = new Video("»Õ");
 
 	public boolean isMusic() {
 		return isMusic;
@@ -37,45 +37,28 @@ public class Player {
 		}
 	}
 
-
-	private void playMusic() {
-		System.out.printf("%s %s%n",musicDate,"play");
+	public void playMusic() {
+		music.playMusic();
 	}
+
+	public void loopMusic() {
+		music.loopMusic();
+	}
+
+	public void stopMusic() {
+		music.stopMusic();
+	}
+
 	private void playvideo() {
-		System.out.printf("%s %s%n",videoDate,"play");
+		video.playvideo();
 	}
-
 
 	private void loopvideo() {
-		System.out.printf("%s %s%n",videoDate,"loop");
-	}
-
-	private void loopMusic() {
-		System.out.printf("%s %s%n",musicDate,"loop");
+		video.loopvideo();
 	}
 
 	private void stopvideo() {
-		System.out.printf("%s %s%n",videoDate,"stop");
-	}
-
-	private void stopMusic() {
-		System.out.printf("%s %s%n",musicDate,"stop");
-	}
-
-	public String getMusicDate() {
-		return musicDate;
-	}
-
-	public void setMusicDate(String musicDate) {
-		this.musicDate = musicDate;
-	}
-
-	public String getVideoDate() {
-		return videoDate;
-	}
-
-	public void setVideoDate(String videoDate) {
-		this.videoDate = videoDate;
+		video.stopvideo();
 	}
 
 }
