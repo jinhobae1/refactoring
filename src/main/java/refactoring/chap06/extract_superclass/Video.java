@@ -1,30 +1,28 @@
 package refactoring.chap06.extract_superclass;
 
-public class Video {
-	public String videoDate;
+public class Video extends Media{
 
-	public Video(String videoDate) {
-		this.videoDate = videoDate;
+	public Video(String data) {
+		super(data);
+
 	}
 
-	public String getVideoDate() {
-		return videoDate;
+	@Override
+	public void play() {
+
+		System.out.printf("%s %s%n", mediaDate, "play");
 	}
 
-	public void setVideoDate(String videoDate) {
-		this.videoDate = videoDate;
+	@Override
+	public void loop() {
+		System.out.printf("%s %s%n", mediaDate, "loop");
+
 	}
 
-	public void playvideo() {
-		System.out.printf("%s %s%n", videoDate, "play");
-	}
+	@Override
+	public void stop() {
+		System.out.printf("%s %s%n", mediaDate, "stop");
 
-	public void loopvideo() {
-		System.out.printf("%s %s%n",videoDate, "loop");
-	}
-
-	public void stopvideo() {
-		System.out.printf("%s %s%n", videoDate, "stop");
 	}
 
 }

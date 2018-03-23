@@ -1,64 +1,25 @@
 package refactoring.chap06.extract_superclass;
 
 public class Player {
-	private boolean isMusic;
-	private Music music = new Music("±Â");
-	private Video video = new Video("»Õ");
-
-	public boolean isMusic() {
-		return isMusic;
-	}
-
-	public void setMusic(boolean isMusic) {
-		this.isMusic = isMusic;
-	}
+	private Media media;
 
 	public void play() {
-		if (isMusic) {
-			playMusic();
-		} else {
-			playvideo();
-		}
+
+		System.out.printf("%s %s%n", media, "play");
 	}
 
 	public void loop() {
-		if (isMusic) {
-			loopMusic();
-		} else {
-			loopvideo();
-		}
+		System.out.printf("%s %s%n", media, "loop");
+
 	}
 
 	public void stop() {
-		if (isMusic) {
-			stopMusic();
-		} else {
-			stopvideo();
-		}
+		System.out.printf("%s %s%n", media, "stop");
+
 	}
 
-	public void playMusic() {
-		music.playMusic();
-	}
-
-	public void loopMusic() {
-		music.loopMusic();
-	}
-
-	public void stopMusic() {
-		music.stopMusic();
-	}
-
-	private void playvideo() {
-		video.playvideo();
-	}
-
-	private void loopvideo() {
-		video.loopvideo();
-	}
-
-	private void stopvideo() {
-		video.stopvideo();
+	public void setMedia(Media media) {
+		this.media = media;
 	}
 
 }

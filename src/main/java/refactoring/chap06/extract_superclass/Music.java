@@ -1,33 +1,28 @@
 package refactoring.chap06.extract_superclass;
 
-public class Music {
-	public String musicDate;
+public class Music extends Media {
 
-	public Music(String musicDate) {
-		this.musicDate = musicDate;
+	public Music(String data) {
+		super(data);
+		
 	}
 
-	public Music() {
-		super();
+	@Override
+	public void play() {
+
+		System.out.printf("%s %s%n", mediaDate, "play");
 	}
 
-	public String getMusicDate() {
-		return musicDate;
+	@Override
+	public void loop() {
+		System.out.printf("%s %s%n", mediaDate, "loop");
+
 	}
 
-	public void setMusicDate(String musicDate) {
-		this.musicDate = musicDate;
-	}
+	@Override
+	public void stop() {
+		System.out.printf("%s %s%n", mediaDate, "stop");
 
-	public void playMusic() {
-		System.out.printf("%s %s%n",musicDate, "play");
-	}
-
-	public void loopMusic() {
-		System.out.printf("%s %s%n",musicDate,"loop");
-	}
-	public void stopMusic() {
-		System.out.printf("%s %s%n",musicDate,"stop");
 	}
 
 }
