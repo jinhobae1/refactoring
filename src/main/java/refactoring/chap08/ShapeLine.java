@@ -2,10 +2,14 @@ package refactoring.chap08;
 
 public class ShapeLine extends Shape {
 
-	public ShapeLine(int startx, int starty, int endx, int endy) {
+	private ShapeLine(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 	}
 
+	public static Shape createShapeLine( int startx, int starty, int endx, int endy) {
+			return new ShapeLine(startx, starty, endx, endy);
+	}
+	
 	@Override
 	public int getTypecode() {
 		return Shape.TYPECODE_LINE;

@@ -7,10 +7,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		List<Shape>shapes = Arrays.asList(
-				Shape.createShape(Shape.TYPECODE_LINE,0,0,100,200),
-				Shape.createShape(Shape.TYPECODE_RECTANGLE,10,20,30,40),
-				Shape.createShape(Shape.TYPECODE_OVAL,100,200,300,400),
-				Shape.createShape(Shape.TYPECODE_TRIANGLE,100,200,300,400)
+				ShapeLine.createShapeLine(0,0,100,200),
+				ShapeRectangle.createShapeRectangle(10,20,30,40),
+				ShapeOval.createShapeOval(100,200,300,400),
+				ShapeTriangle.createShapeTriangle(100,200,300,400)
 				);
 		for(Shape s:shapes) {
 			s.draw();

@@ -2,9 +2,13 @@ package refactoring.chap08;
 
 public class ShapeTriangle extends Shape {
 
-	public ShapeTriangle(int startx, int starty, int endx, int endy) {
+	private ShapeTriangle(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
-		// TODO Auto-generated constructor stub
+
+	}
+
+	public static Shape createShapeTriangle(int startx, int starty, int endx, int endy) {
+		return new ShapeTriangle(startx, starty, endx, endy);
 	}
 
 	@Override

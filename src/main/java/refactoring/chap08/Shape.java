@@ -19,20 +19,7 @@ public abstract class Shape {
 		this.endy = endy;
 	}
 
-	public static Shape createShape(int typecode, int startx, int starty, int endx, int endy) {
-		switch (typecode) {
-		case TYPECODE_LINE:
-			return new ShapeLine(startx, starty, endx, endy);
-		case TYPECODE_RECTANGLE:
-			return new ShapeRectangle(startx, starty, endx, endy);
-		case TYPECODE_OVAL:
-			return new ShapeOval(startx, starty, endx, endy);
-		case TYPECODE_TRIANGLE:
-			return new ShapeTriangle(startx, starty, endx, endy);
-		default:
-			throw new IllegalArgumentException("typecode=" + typecode);
-		}
-	}
+
 
 	public abstract int getTypecode();
 
@@ -42,7 +29,7 @@ public abstract class Shape {
 
 	@Override
 	public String toString() {
-		return String.format("[%-10s,(%3s,%3s)-(%3s,%3s)]", getName(), startx, starty, endx, endy);
+		return String.format("[%-10s,(%3s,%3s)(%3s,%3s)]", getName(), startx, starty, endx, endy);
 	}
 
 

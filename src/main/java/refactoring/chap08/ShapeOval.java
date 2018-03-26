@@ -2,10 +2,13 @@ package refactoring.chap08;
 
 public class ShapeOval extends Shape {
 
-	public ShapeOval(int startx, int starty, int endx, int endy) {
+	private ShapeOval(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 
 	}
+	public static Shape createShapeOval( int startx, int starty, int endx, int endy) {
+		return new ShapeOval(startx, starty, endx, endy);
+}
 
 	@Override
 	public int getTypecode() {
