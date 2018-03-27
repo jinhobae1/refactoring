@@ -30,9 +30,9 @@ public class Command {
 		this.name = name;
 	}
 
-	public static Command parseCommand(String name) {
+	public static Command parseCommand(String name) throws InvalidCommandExcaption {
 		if (!commandNameMap.containsKey(name)) {
-			return null;
+			throw new InvalidCommandExcaption(name);
 		}
 		return commandNameMap.get(name);
 	}
