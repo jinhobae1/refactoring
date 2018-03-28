@@ -3,11 +3,11 @@ package refactoring.chapter10;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Command {
-	public static final Command FORWARD = new Command("forward");
-	public static final Command BACKWARD = new Command("backward");
-	public static final Command TURN_RIGHT = new Command("right");
-	public static final Command TRUN_LEFT = new Command("left");
+public abstract class Command {
+	public static final Command FORWARD = new Forward();
+	public static final Command BACKWARD = new BACKWARD();
+	public static final Command TURN_RIGHT = new RIGHT();
+	public static final Command TRUN_LEFT = new left();
 	public static final Map<String, Command> commandNameMap = new HashMap<String, Command>();
 	private String name;
 
@@ -35,5 +35,51 @@ public class Command {
 			throw new InvalidCommandExcaption(name);
 		}
 		return commandNameMap.get(name);
+	}
+
+	public abstract void execute(Robot robot);
+
+	private static class Forward extends Command {
+
+		public Forward() {
+			super("forward");
+		}
+
+		public void execute(Robot robot) {
+			robot.forward();
+		}
+	}
+
+	private static class BACKWARD extends Command {
+
+		public BACKWARD() {
+			super("BACKWARD");
+		}
+
+		public void execute(Robot robot) {
+			robot.backward();
+		}
+	}
+
+	private static class RIGHT extends Command {
+
+		public RIGHT() {
+			super("TURN_RIGHT");
+		}
+
+		public void execute(Robot robot) {
+			robot.right();
+		}
+	}
+
+	private static class left extends Command {
+
+		public left() {
+			super("TURN_LEFT");
+		}
+
+		public void execute(Robot robot) {
+			robot.left();
+		}
 	}
 }

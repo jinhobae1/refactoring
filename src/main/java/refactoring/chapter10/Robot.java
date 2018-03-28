@@ -29,20 +29,26 @@ public class Robot {
 	}
 
 	public void executeCommand(String commandString) throws InvalidCommandExcaption {
-		Command command = Command.parseCommand(commandString);
-		executeCommand(command);
+		Command command= Command.parseCommand(commandString);
+		command.execute(this);
+	
 	}
 
-	public void executeCommand(Command command) {
-		if (command == Command.FORWARD) {
-			position.relativeMove(direction.Px, direction.Py);
-		} else if (command == Command.BACKWARD) {
-			position.relativeMove(direction.Px, -direction.Py);
-		} else if (command == Command.TURN_RIGHT) {
-			direction.setDirection(direction.Py, -direction.Px);
-		} else if (command == Command.TRUN_LEFT) {
-			direction.setDirection(-direction.Py, direction.Px);
-		}
+
+	public void forward() {
+		position.relativeMove(direction.Px, direction.Py);
+	}
+
+	public void backward() {
+		position.relativeMove(direction.Px, -direction.Py);
+	}
+
+	public void right() {
+		direction.setDirection(direction.Py, -direction.Px);
+	}
+
+	public void left() {
+		direction.setDirection(-direction.Py, direction.Px);
 	}
 
 	@Override
