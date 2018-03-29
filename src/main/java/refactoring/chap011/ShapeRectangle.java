@@ -5,13 +5,13 @@ import refactoring.chap11.Shape;
 public class ShapeRectangle extends Shape {
 	private static final ShapeRectangle instance = new ShapeRectangle();
 
+	private ShapeRectangle() {
+	}
+
 	public static ShapeRectangle getInstance(int startx, int starty, int endx, int endy) {
 		instance.setShape(startx, starty, endx, endy);
 		return instance;
 	}
-
-
-	private ShapeRectangle() {}
 
 	@Override
 	public String getName() {
