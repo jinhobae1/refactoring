@@ -16,13 +16,24 @@ public class Dice extends Random {
 			return nextInt(6)+1;
 		}
 
-	/*@Override
-		public void nextBytes(byte[])bytes	{
+	@Override
+		public void nextBytes(byte[]bytes)	{
 			throw new UnsupportedOperationException();
 		}
 		@Override
 		public long nextLong() {
-			t
+			throw new UnsupportedOperationException();
 		}
-*/
+		@Override
+		public float nextFloat() {
+			throw new UnsupportedOperationException();
+		}
+		@Override
+		public double nextDouble() {
+			throw new UnsupportedOperationException();
+		}@Override
+		public double nextGaussian() {
+			throw new UnsupportedOperationException();
+		}
+
 	}
