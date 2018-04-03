@@ -23,6 +23,6 @@ public class AddressFile {
 	}
 
 	public Enumeration names() {
-		return database.getProperties().propertyNames();
+		return database.keys();
 	}
 }
