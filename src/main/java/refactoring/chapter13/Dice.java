@@ -16,15 +16,29 @@ public class Dice {
 	public void setSeed(long seed) {
 		random.setSeed(seed);
 	}
-			
+
 	public int nextInt() {
-		return random.nextInt(6)+1;
+		return random.nextInt(6) + 1;
 	}
 
-	/*
-	 * @Override public void nextBytes(byte[])bytes { throw new
-	 * UnsupportedOperationException(); }
-	 * 
-	 * @Override public long nextLong() { t }
-	 */
+	public void nextBytes(byte[] bytes) {
+		throw new UnsupportedOperationException();
+	}
+
+	public long nextLong() {
+		throw new UnsupportedOperationException();
+	}
+
+	public float nextFloat() {
+		throw new UnsupportedOperationException();
+	}
+
+	public double nextDouble() {
+		throw new UnsupportedOperationException();
+	}
+
+	public double nextGaussian() {
+		throw new UnsupportedOperationException();
+	}
+
 }
