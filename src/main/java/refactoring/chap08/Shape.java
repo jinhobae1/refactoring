@@ -24,7 +24,7 @@ public abstract class Shape {
 		case TYPECODE_LINE:
 			return new ShapeLine(startx, starty, endx, endy);
 		case TYPECODE_RECTANGLE:
-			return new ShapeRectangle(startx, starty, endx, endy);
+		/*	return new ShapeRectangle(startx, starty, endx, endy);*/
 		case TYPECODE_OVAL:
 			return new ShapeOval(startx, starty, endx, endy);
 		case TYPECODE_TRIANGLE:
