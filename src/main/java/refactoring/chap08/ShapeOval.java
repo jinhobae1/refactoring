@@ -2,7 +2,7 @@ package refactoring.chap08;
 
 public class ShapeOval extends Shape {
 
-	private ShapeOval(int startx, int starty, int endx, int endy) {
+	ShapeOval(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 
 	}

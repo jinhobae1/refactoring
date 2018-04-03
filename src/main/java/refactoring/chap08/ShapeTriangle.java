@@ -2,7 +2,7 @@ package refactoring.chap08;
 
 public class ShapeTriangle extends Shape {
 
-	private ShapeTriangle(int startx, int starty, int endx, int endy) {
+	ShapeTriangle(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 
 	}
