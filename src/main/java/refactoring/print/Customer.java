@@ -27,18 +27,16 @@ public class Customer {
 
 		for (Rental each : rentals) {
 			double thisAmount = each.getCharge();
-			frequentRenterPoints++;
-			if((each.getMovie().getPriceCode()==Movie.NEW_RELEASE)&&each.getDaysRented()>1)
-				frequentRenterPoints++;
-			
-			result.append("\t"+each.getMovie().getTitle());
-			result.append("\t"+String.valueOf(thisAmount)+"\n");
-			totalAmount+=thisAmount;
+			frequentRenterPoints += each.getRenterPoints();
+
+			result.append("\t" + each.getMovie().getTitle());
+			result.append("\t" + String.valueOf(thisAmount) + "\n");
+			totalAmount += thisAmount;
 		}
-		
-		result.append("누적 대여료:"+String.valueOf(totalAmount)+"\n");
-		result.append("적립 포인트:"+String.valueOf(frequentRenterPoints));
-		
+
+		result.append("누적 대여료:" + String.valueOf(totalAmount) + "\n");
+		result.append("적립 포인트:" + String.valueOf(frequentRenterPoints));
+
 		return result.toString();
 
 	}
