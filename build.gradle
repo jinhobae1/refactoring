@@ -14,7 +14,7 @@ javadoc {
 
 jar {
    version = 1.0
-   mainClassName = 'refactoring.Main'
+   mainClassName = 'refactoring.print.TestMain'
    baseName = 'Refactor'
    appendix = 'bin'
    manifest {
